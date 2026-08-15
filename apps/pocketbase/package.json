@@ -5,7 +5,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "./pocketbase serve --http=0.0.0.0:8090 --encryptionEnv=PB_ENCRYPTION_KEY --hooksWatch=false",
-		"dev:local": "$([ -x ./.bin/pocketbase ] && echo ./.bin/pocketbase || echo ./pocketbase) serve --http=127.0.0.1:8090 --dir=./pb_data --migrationsDir=./pb_migrations --hooksDir=./pb_hooks --hooksWatch=false",
+		"dev:local": "PB_SUPERUSER_EMAIL=${PB_SUPERUSER_EMAIL:-admin@local.test} PB_SUPERUSER_PASSWORD=${PB_SUPERUSER_PASSWORD:-localdev1234} $([ -x ./.bin/pocketbase ] && echo ./.bin/pocketbase || echo ./pocketbase) serve --http=127.0.0.1:8090 --dir=./pb_data_local --migrationsDir=./pb_migrations --hooksDir=./pb_hooks --hooksWatch=false",
 		"start": "./pocketbase serve --http=0.0.0.0:8090 --encryptionEnv=PB_ENCRYPTION_KEY --dir=/data --migrationsDir=./pb_migrations --hooksDir=./pb_hooks --hooksWatch=false",
 		"migrations:up": "./pocketbase horizons migrations:up --encryptionEnv=PB_ENCRYPTION_KEY --dir=./pb_data --migrationsDir=./pb_migrations --hooksDir=./pb_hooks --hooksWatch=false",
 		"migrations:revert": "./pocketbase horizons migrations:revert --encryptionEnv=PB_ENCRYPTION_KEY --dir=./pb_data --migrationsDir=./pb_migrations --hooksDir=./pb_hooks --hooksWatch=false",
