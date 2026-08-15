@@ -8,14 +8,14 @@ import RsvpForm from '@/components/wedding/RsvpForm';
 import Sprig from '@/components/wedding/Sprig';
 
 const HERO = 'https://horizons-cdn.hostinger.com/bc31f9fb-9fa3-4378-81f9-a5eb7286982e/f9a5946d3629e888b5145a7845d2f38d.png';
-const VENUE = 'https://images.unsplash.com/photo-1692013832057-4503159ab8eb?w=1280&h=832&fit=crop&q=80';
-const HOTEL = 'https://images.unsplash.com/photo-1691228397429-351b4426447c?w=1216&h=896&fit=crop&q=80';
+const VENUE = 'https://images.unsplash.com/photo-1567106931976-ef198a8f1b6b?w=1280&h=832&fit=crop&q=80';
+const HOTEL = 'https://images.unsplash.com/photo-1642141355583-9e3d7512860f?w=1216&h=896&fit=crop&q=80';
 
 const ADDRESS = '2 Quamby Pl, Noosa Heads QLD 4567, Australia';
 const MAPS_LINK = 'https://www.google.com/maps/search/?api=1&query=Rickys+River+Bar+%26+Restaurant+2+Quamby+Pl+Noosa+Heads+QLD';
 
 const schedule = [
-    { time: '3:30 pm', title: 'Ceremony', icon: Church, note: 'Riverside lawn, under the pandanus trees.' },
+    { time: '3:30 pm', title: 'Ceremony', icon: Church, note: "Ricky's Restaurant, Noosa — by the water." },
     { time: '4:30 pm', title: 'Cocktail hour', icon: GlassWater, note: 'Spritz, oysters and sea breeze on the deck.' },
     { time: '6:00 pm', title: 'Reception & dinner', icon: UtensilsCrossed, note: 'Long-table dinner with a few heartfelt speeches.' },
     { time: '8:30 pm', title: 'Party', icon: Music, note: 'Dancing until late — bring the shoes you can move in.' },
@@ -95,10 +95,10 @@ const HomePage = () => (
                     <SectionLabel>About the party</SectionLabel>
                     <h2 className="font-display mt-5 text-4xl font-light sm:text-5xl">A day by the water</h2>
                     <p className="mt-6 text-sm leading-loose text-muted-foreground">
-                        After nine years, two cities and one very beloved dog, we are saying yes in the place we love most.
-                        Come as you are, stay as long as you like, and help us turn one afternoon in Noosa into the kind of
-                        evening we will all still talk about years from now. Nothing about the day matters more to us than
-                        having you in it.
+                        Nine years and two cities have brought us to this moment, and we could not be happier to say yes in the
+                        place we love most. Come as you are, stay as long as you like, and share with us an afternoon in Noosa
+                        that turns into an evening we will all remember fondly for years to come. Nothing about this day means
+                        more to us than having you there.
                     </p>
                     <p className="font-display mt-6 text-2xl italic text-primary">With all our love, Hannah &amp; Gustavo</p>
                 </div>
@@ -144,18 +144,18 @@ const HomePage = () => (
             <div className="mx-auto max-w-[72rem] px-6">
                 <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
                     <Reveal>
-                        <img src={VENUE} alt="Waterfront riverside reception setting at Rickys River Bar, Noosa Heads" className="h-[26rem] w-full object-cover" />
+                        <img src={VENUE} alt="Aerial view of the Noosa River mouth, Queensland" className="h-[26rem] w-full object-cover" />
                     </Reveal>
                     <Reveal delay={0.1}>
                         <SectionLabel>Location</SectionLabel>
-                        <h2 className="font-display mt-5 text-4xl font-light sm:text-5xl">Rickys River Bar &amp; Restaurant</h2>
+                        <h2 className="font-display mt-5 text-4xl font-light sm:text-5xl">Ricky&apos;s Restaurant, Noosa</h2>
                         <p className="mt-4 flex items-start gap-2 text-sm text-muted-foreground">
                             <MapPin size={16} strokeWidth={1.2} className="mt-0.5 shrink-0 text-accent" />
                             {ADDRESS}
                         </p>
                         <p className="mt-6 text-sm leading-loose text-muted-foreground">
-                            A stunning waterfront location on the Noosa River, offering uninterrupted views, gorgeous sunsets
-                            and a stylish setting for our celebration. Ceremony by the water, dinner and dancing as the tide
+                            A stunning waterfront setting on the Noosa River, with uninterrupted views, gorgeous sunsets
+                            and the perfect place to say our vows. Ceremony by the water, then dinner and dancing as the tide
                             moves underneath and the light turns golden over the river.
                         </p>
                         <a
@@ -205,7 +205,7 @@ const HomePage = () => (
                         </p>
                     </Reveal>
                     <Reveal delay={0.1}>
-                        <img src={HOTEL} alt="Boutique beachside hotel near Hastings Street, Noosa" className="h-full min-h-[20rem] w-full object-cover" />
+                        <img src={HOTEL} alt="Noosa beach in summer, Queensland" className="h-full min-h-[20rem] w-full object-cover" />
                     </Reveal>
                 </div>
             </div>
