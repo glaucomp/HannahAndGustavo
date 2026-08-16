@@ -1,0 +1,22 @@
+# Hostinger's Git deployment clones this whole repository into the web root, so
+# the built site sits in dist/apps/web rather than at the domain root. These
+# rules present that folder as the site and keep the source tree unreachable.
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+
+	RewriteRule ^(apps|vault|node_modules|\.git)(/|$) - [F,L]
+	RewriteRule ^(package\.json|package-lock\.json|knip\.json|\.gitignore)$ - [F,L]
+
+	RewriteCond %{REQUEST_URI} !^/dist/
+	RewriteCond %{DOCUMENT_ROOT}/dist/apps/web%{REQUEST_URI} -f
+	RewriteRule ^(.*)$ dist/apps/web/$1 [L]
+
+	RewriteCond %{REQUEST_URI} !^/dist/
+	RewriteRule ^ dist/apps/web/index.html [L]
+</IfModule>
+
+<IfModule mod_autoindex.c>
+	Options -Indexes
+</IfModule>
