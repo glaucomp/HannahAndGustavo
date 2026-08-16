@@ -417,7 +417,14 @@ export default defineConfig({
 	build: {
 		outDir: path.resolve(__dirname, '../../dist/apps/web'),
 		emptyOutDir: true,
+		// Hostinger sometimes deploys index.html but skips the assets/ subfolder.
+		assetsDir: '.',
 		rollupOptions: {
+			output: {
+				entryFileNames: 'app-[hash].js',
+				chunkFileNames: 'app-[hash].js',
+				assetFileNames: 'app-[hash][extname]',
+			},
 			external: [
 				'@babel/parser',
 				'@babel/traverse',
